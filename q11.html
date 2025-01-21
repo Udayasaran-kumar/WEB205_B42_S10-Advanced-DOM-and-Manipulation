@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating and Removing Elements</title>
+    <style>
+        div{
+            height: fit-content;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="maindiv"></div>
+    <button id="add">Add Paragraph</button>
+    <button id="delete">Remove Last Paragraph</button>
+    
+</body>
+</html>
+<script>
+    let button1=document.querySelector("#add");
+    console.log(button1);
+    let store=document.querySelector("#maindiv");
+    button1.addEventListener('click',()=>{
+       let para=document.createElement("p");
+       para.textContent="This is a new paragraph";
+       store.appendChild(para);
+    },);
+    let button2=document.querySelector("#delete");
+    button2.addEventListener('click',()=>{
+        let lastChild = store.lastElementChild;
+        store.removeChild(lastChild);
+    })
+</script>
